@@ -1,4 +1,5 @@
-/*! normalize.css v3.0.1 | MIT License | git.io/normalize */html {
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
@@ -3465,6 +3466,10 @@ body,html {
 #M004A h4 {
     text-align: center;
     margin: 20px 0 15px;
+}
+
+.M004A_widget1 .wdm-nocapt-recapt>div {
+    margin: 0 auto;
 }
 
 .M004A_widget1 .logo {
