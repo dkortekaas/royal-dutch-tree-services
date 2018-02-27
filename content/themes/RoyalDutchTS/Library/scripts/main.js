@@ -11,10 +11,19 @@ jQuery.extend({M006A:function(e){function l(){t.setProperties()}var i=this,t={ho
 
 jQuery.extend({fullWidthSlider:function(l){function e(){t.setup(),t.setProperties(),t.fade()}var i=this,t={holder:i,slides:null,teller:null,slider:null,setup:function(){t.teller=0,t.slider=$(l).find(".full-width-slides"),$(l).find(".full-width-slides>li").each(function(){$(l).find(".dots").append("<li></li>")}),t.changeDotColor(t.teller)},setProperties:function(){$(l).find("ul.full-width-slides > li").width($(window).width()),$(l).find("ul.full-width-slides").width($(l).find(".full-width-slides").children().length*$(window).width())},changeDotColor:function(){$(l).find("ul.dots li:eq("+t.teller+")").addClass("dotActive")},fade:function(){$(l).find(" ul.full-width-slides").delay(5e3).queue(function(){$(".full-width-slides > li").eq(t.teller).fadeOut(400,function(){t.teller<$(".full-width-slides > li").length-1?t.teller++:($(l).find("ul.dots li").removeClass("dotActive"),t.teller=0),t.changeDotColor(t.teller),$(".full-width-slides > li").eq(t.teller).fadeIn(400,function(){t.fade()})}),$(this).dequeue()})},slide:function(){t.changeDotColor(t.teller),$(l).find(" ul.full-width-slides").animate({left:"+=0"},3500,function(){t.teller<$(".full-width-slides > li").length-1?$(l).find("ul.full-width-slides").animate({left:"-="+$(l).width()},1e3,function(){t.teller++,t.slide()}):$(l).find("ul.full-width-slides").fadeOut(400,function(){$(l).find("ul.full-width-slides").css("left","0px"),$(l).find("ul.full-width-slides").fadeIn(400,function(){t.teller=0,$(l).find("ul.dots li").removeClass("dotActive"),t.slide()})})})}};$(l).length>0&&(t.setup(),t.setProperties(),t.fade());var d;$(window).resize(function(){clearTimeout(d),d=setTimeout(e,100)})}}),$(function(){$(document).ready(function(){new $.fullWidthSlider($("#full-width-slider"))})});
 
-
-
 jQuery(document).ready(function(){
 	jQuery("body.home li#menu-item-389 a").attr("href", "#anchor");
 });
 
-
+// CF7 Redirects
+document.addEventListener( 'wpcf7submit', function( event ) {
+    if ( '3' == event.detail.contactFormId ) { // CF7 Contact - 3
+		location = 'https://www.royaldutchtreeservices.ca/contact-thanks/';
+	}
+	if ( '249' == event.detail.contactFormId ) { // CF7 Footer form - 249
+		location = 'https://www.royaldutchtreeservices.ca/quote-request-thanks/';
+	}
+	if ( '976' == event.detail.contactFormId ) { // CF7 Quote form - 976
+		location = 'https://www.royaldutchtreeservices.ca/quote-request-thanks/';
+	}
+}, false );
